@@ -33,7 +33,7 @@ structlog.configure(
 
 logger = structlog.get_logger()
 
-PERMISSION_MAP = {"yellow": 17}
+PERMISSION_MAP = {"yellow": 7}
 
 
 @asynccontextmanager
