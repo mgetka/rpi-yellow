@@ -90,9 +90,12 @@ async def _trigger(
 
         actuator = Actuator(gpio_id)
         actuator.on()
+        logger.info("relay on", permission=permission)
         await sleep(settings.trigger_time)
         actuator.off()
+        logger.info("relay off", permission=permission)
         await sleep(settings.backoff_time)
+        logger.info("backoff period elapsed", permission=permission)
 
     finally:
         app.state.triggered.remove(permission)
