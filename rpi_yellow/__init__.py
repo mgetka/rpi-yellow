@@ -23,7 +23,6 @@ logging.basicConfig(
 structlog.configure(
     processors=[
         structlog.stdlib.add_log_level,
-        structlog.processors.TimeStamper(fmt="iso"),
         structlog.dev.ConsoleRenderer(colors=True),
     ],
     wrapper_class=structlog.stdlib.BoundLogger,
